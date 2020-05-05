@@ -1,0 +1,11 @@
+caseID	模块名	操作	是否执行	执行方法	输入的数据	操作元素	预期结果	预期结果值	report
+register001	登录	打开浏览器	yes	open_browser		chrome			
+register002	登录	输入url	yes	get_url		https://2p.17wo.cn:47203/mall/#	get_title	text=沃畅购	
+register003	登录	点击	yes	click_element		my			
+register004	登录	点击	yes	click_element		login			
+register005	登录	输入	yes	send_keys	18373636466	tel			
+register006	登录	点击	yes	click_element		get_code			
+register007	登录	输入	yes	send_keys		code			
+register008	登录	点击	yes	click_element		click_login	get_element	element=tel	
+register009	登录	等待	yes	sleep_time					
+register010	登录	关闭浏览器	yes	close_browser					
