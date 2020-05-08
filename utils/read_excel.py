@@ -14,8 +14,8 @@ class Excel(object):
            self.index = 0
         else:
             self.index = index
-        self.data = xlrd.open_workbook(excel_path)        # 打开Excel
-        self.table = self.data.sheets()[index]            # 获取工作列表中所有行的所有字段列表
+        self.data = xlrd.open_workbook(self.excel_path)        # 打开Excel
+        self.table = self.data.sheets()[self.index]            # 获取工作列表中所有行的所有字段列表
 
     # 获取行数
     def get_lines(self):
@@ -42,14 +42,13 @@ class Excel(object):
         return None
 
     # 写入数据
-    def write_value(self, row, col, value):
+    def write_value(self, row, value):
         read_value = xlrd.open_workbook(self.excel_path)
         write_data = copy(read_value)
-        write_data.get_sheet(0).write(row, col, value)
+        write_data.get_sheet(0).write(row, 9, value)
         write_data.save(self.excel_path)
 
 if __name__ == '__main__':
     ex = Excel()
-
-    print(ex.write_value(4,9, 'hello hello'))
-    print(ex.get_col_value(3,4))
+    print(ex.get_col_value(3, 4))
+    print(ex.get_data())
