@@ -1,5 +1,6 @@
 from utils.read_excel import Excel
 from key_word.action_method import ActionMethod
+import HTMLTestRunner
 from log.log import Log
 import os
 
@@ -15,7 +16,7 @@ class KeywordCase(object):
         file_path = os.path.dirname(os.path.abspath(os.getcwd())) + '/config/' + 'keywords.xls'
         handle_excel = Excel(file_path)
         case_lines = handle_excel.get_lines()
-        log.info('打开case文件成功！')
+        log.info('读取case文件成功！')
         logger.close_hadle()
 
         if case_lines:
@@ -66,4 +67,9 @@ class KeywordCase(object):
 
 if __name__ == '__main__':
     case = KeywordCase()
+    # HTMLTestRunner好像只适用于unittest框架？？？
+    # file_path = os.path.join(os.path.abspath(os.path.dirname(os.getcwd())) + '/report/' + 'result.html')
+    # report = open(file_path, 'w', encoding='utf-8')
+    # runner = HTMLTestRunner.HTMLTestRunner(stream=report, title='第1份报告', description='登录模块', verbosity=2)
+    # runner.run()
     case.run_case()

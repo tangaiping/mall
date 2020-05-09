@@ -1,5 +1,5 @@
 [elements]
-my = XPath:/html/body/div[1]/div/div[3]/a[2]/div/span
+my = XPath:/html/body/div[1]/div/div[2]/a[2]/div
 login = XPath:/html/body/div[1]/div/div[1]/div[3]
 tel = XPath:/html/body/div[1]/div/div[4]/div[1]/div/div[1]/input
 code = XPath:/html/body/div[1]/div/div[4]/div[1]/div/div[2]/input
